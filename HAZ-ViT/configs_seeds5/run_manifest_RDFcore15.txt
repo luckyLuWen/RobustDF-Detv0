@@ -1,0 +1,5 @@
+# RDFcore15 novelty controls (3 configs x 5 seeds = 15 runs)
+
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py

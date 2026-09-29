@@ -1,0 +1,22 @@
+{
+  "rtmdet_l_fire_4c_std.py": "RTM-Base",
+  "rtmdet_l_fire_4c_var_backbone_dinov3.py": "RTM-DINO",
+  "rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py": "RTM-DINO-Opt",
+  "rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py": "RTM-DINO-Opt-WD0",
+  "rtmdet_l_fire_4c_var_loss_focal.py": "RTM-Focal",
+  "rtmdet_l_fire_4c_var_neck_fpn.py": "RTM-FPN",
+  "rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py": "RTM-RDF-LLR-CSP",
+  "rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py": "RTM-RDF-LLR-DINO",
+  "rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py": "RTM-RDF-GLR-DINO",
+  "rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py": "RTM-RDF-FUF-DINO",
+  "rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py": "RTM-RDF-PMFR-DINO",
+  "yolox_l_fire_4c_std.py": "YOLOX-Base",
+  "yolox_l_fire_4c_var_backbone_dinov3.py": "YOLOX-DINO",
+  "yolox_l_fire_4c_var_neck_cspnextpafpn.py": "YOLOX-CSPPAFPN",
+  "yolox_l_fire_4c_var_loss_giou.py": "YOLOX-GIoU",
+  "yolox_l_fire_4c_innov_gated_dualneck_dinov3.py": "YOLOX-RDF-LLR-DINO",
+  "faster_rcnn_fire_4c_baseline.py": "FRCNN-Base",
+  "faster_rcnn_fire_4c_plus_dino.py": "FRCNN-DINO",
+  "faster_rcnn_fire_4c_plus_neck.py": "FRCNN-Neck",
+  "faster_rcnn_fire_4c_plus_both.py": "FRCNN-DINO-Neck"
+}

@@ -1,0 +1,22 @@
+# 5-seed run list (0, 1, 42, 3407, 1234)
+# One config per line. Comments and blank lines are ignored.
+
+rtmdet_l_fire_4c_std.py
+rtmdet_l_fire_4c_var_backbone_dinov3.py
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py
+rtmdet_l_fire_4c_var_loss_focal.py
+rtmdet_l_fire_4c_var_neck_fpn.py
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py
+
+yolox_l_fire_4c_std.py
+yolox_l_fire_4c_var_backbone_dinov3.py
+yolox_l_fire_4c_var_loss_giou.py
+yolox_l_fire_4c_var_neck_cspnextpafpn.py
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py
+
+faster_rcnn_fire_4c_baseline.py
+faster_rcnn_fire_4c_plus_dino.py
+faster_rcnn_fire_4c_plus_neck.py
+faster_rcnn_fire_4c_plus_both.py

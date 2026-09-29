@@ -1,0 +1,16 @@
+{
+  "source_commit": "6cf481f520ad1acb903ac0c1afdbc1ccd8b59451",
+  "mmdetection_commit": "44ebd17b145c2372c4b700bfb9cb20dbd28ab64a",
+  "mmdetection_tag": "v3.3.0",
+  "runs": 100,
+  "configurations": 20,
+  "seeds": [
+    0,
+    1,
+    42,
+    1234,
+    3407
+  ],
+  "convnext_source_sha256": "ab969325158df58f4b0957f81f77d543392df61611dc0c72e89ba172ecdf0fb9",
+  "result_selection": "Per-run best validation AP and AP50, selected independently."
+}

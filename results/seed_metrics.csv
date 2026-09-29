@@ -1,0 +1,101 @@
+config,model,family,seed,best_ap,best_ap50,ap50_at_best_ap,best_ap_epoch,best_ap50_epoch,final_ap,final_ap50,final_epoch
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py,RTM-RDF-PMFR-DINO,RTMDet,0,0.626,0.928,0.916,299,100,0.625,0.914,300
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py,RTM-RDF-PMFR-DINO,RTMDet,1,0.636,0.926,0.919,300,100,0.636,0.919,300
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py,RTM-RDF-PMFR-DINO,RTMDet,1234,0.63,0.927,0.925,297,300,0.629,0.927,300
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py,RTM-RDF-PMFR-DINO,RTMDet,3407,0.639,0.93,0.93,298,294,0.637,0.929,300
+rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py,RTM-RDF-PMFR-DINO,RTMDet,42,0.626,0.945,0.917,220,20,0.622,0.918,300
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py,RTM-RDF-GLR-DINO,RTMDet,0,0.632,0.932,0.923,300,30,0.632,0.923,300
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py,RTM-RDF-GLR-DINO,RTMDet,1,0.64,0.934,0.92,298,80,0.636,0.92,300
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py,RTM-RDF-GLR-DINO,RTMDet,1234,0.638,0.928,0.927,295,300,0.636,0.928,300
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py,RTM-RDF-GLR-DINO,RTMDet,3407,0.633,0.927,0.922,80,100,0.631,0.926,300
+rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py,RTM-RDF-GLR-DINO,RTMDet,42,0.633,0.924,0.917,294,20,0.632,0.922,300
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py,RTM-RDF-FUF-DINO,RTMDet,0,0.644,0.933,0.933,300,297,0.644,0.933,300
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py,RTM-RDF-FUF-DINO,RTMDet,1,0.629,0.924,0.92,296,80,0.629,0.92,300
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py,RTM-RDF-FUF-DINO,RTMDet,1234,0.632,0.926,0.926,299,299,0.631,0.926,300
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py,RTM-RDF-FUF-DINO,RTMDet,3407,0.627,0.93,0.919,60,298,0.622,0.929,300
+rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py,RTM-RDF-FUF-DINO,RTMDet,42,0.642,0.931,0.93,297,298,0.64,0.931,300
+faster_rcnn_fire_4c_baseline.py,FRCNN-Base,Faster R-CNN,0,0.397,0.739,0.739,30,30,0.362,0.689,70
+faster_rcnn_fire_4c_baseline.py,FRCNN-Base,Faster R-CNN,1,0.383,0.738,0.735,20,25,0.354,0.667,70
+faster_rcnn_fire_4c_baseline.py,FRCNN-Base,Faster R-CNN,1234,0.373,0.739,0.722,20,30,0.351,0.663,70
+faster_rcnn_fire_4c_baseline.py,FRCNN-Base,Faster R-CNN,3407,0.393,0.739,0.739,35,35,0.364,0.68,70
+faster_rcnn_fire_4c_baseline.py,FRCNN-Base,Faster R-CNN,42,0.386,0.729,0.705,45,40,0.358,0.663,70
+faster_rcnn_fire_4c_plus_both.py,FRCNN-DINO-Neck,Faster R-CNN,0,0.578,0.915,0.915,15,15,0.561,0.868,70
+faster_rcnn_fire_4c_plus_both.py,FRCNN-DINO-Neck,Faster R-CNN,1,0.581,0.921,0.885,65,5,0.573,0.873,70
+faster_rcnn_fire_4c_plus_both.py,FRCNN-DINO-Neck,Faster R-CNN,1234,0.573,0.888,0.879,45,25,0.562,0.865,70
+faster_rcnn_fire_4c_plus_both.py,FRCNN-DINO-Neck,Faster R-CNN,3407,0.586,0.918,0.918,10,10,0.528,0.828,70
+faster_rcnn_fire_4c_plus_both.py,FRCNN-DINO-Neck,Faster R-CNN,42,0.568,0.907,0.887,35,5,0.547,0.856,70
+faster_rcnn_fire_4c_plus_dino.py,FRCNN-DINO,Faster R-CNN,0,0.58,0.896,0.896,50,50,0.563,0.875,70
+faster_rcnn_fire_4c_plus_dino.py,FRCNN-DINO,Faster R-CNN,1,0.596,0.905,0.9,45,10,0.581,0.876,70
+faster_rcnn_fire_4c_plus_dino.py,FRCNN-DINO,Faster R-CNN,1234,0.582,0.89,0.89,45,45,0.574,0.879,70
+faster_rcnn_fire_4c_plus_dino.py,FRCNN-DINO,Faster R-CNN,3407,0.587,0.92,0.902,45,10,0.578,0.887,70
+faster_rcnn_fire_4c_plus_dino.py,FRCNN-DINO,Faster R-CNN,42,0.587,0.925,0.91,25,5,0.568,0.863,70
+faster_rcnn_fire_4c_plus_neck.py,FRCNN-Neck,Faster R-CNN,0,0.305,0.626,0.621,50,30,0.294,0.6,70
+faster_rcnn_fire_4c_plus_neck.py,FRCNN-Neck,Faster R-CNN,1,0.348,0.688,0.68,50,30,0.337,0.66,70
+faster_rcnn_fire_4c_plus_neck.py,FRCNN-Neck,Faster R-CNN,1234,0.261,0.588,0.588,50,50,0.244,0.546,70
+faster_rcnn_fire_4c_plus_neck.py,FRCNN-Neck,Faster R-CNN,3407,0.194,0.499,0.495,30,40,0.187,0.478,70
+faster_rcnn_fire_4c_plus_neck.py,FRCNN-Neck,Faster R-CNN,42,0.288,0.645,0.605,55,45,0.277,0.615,70
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py,RTM-RDF-LLR-CSP,RTMDet,0,0.582,0.897,0.893,294,299,0.581,0.897,300
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py,RTM-RDF-LLR-CSP,RTMDet,1,0.589,0.885,0.885,300,299,0.589,0.885,300
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py,RTM-RDF-LLR-CSP,RTMDet,1234,0.582,0.886,0.883,290,296,0.58,0.886,300
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py,RTM-RDF-LLR-CSP,RTMDet,3407,0.588,0.898,0.897,299,300,0.588,0.898,300
+rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py,RTM-RDF-LLR-CSP,RTMDet,42,0.579,0.89,0.889,298,300,0.576,0.89,300
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py,RTM-RDF-LLR-DINO,RTMDet,0,0.629,0.928,0.919,292,100,0.627,0.923,300
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py,RTM-RDF-LLR-DINO,RTMDet,1,0.637,0.92,0.915,296,40,0.636,0.917,300
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py,RTM-RDF-LLR-DINO,RTMDet,1234,0.632,0.916,0.916,295,293,0.63,0.914,300
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py,RTM-RDF-LLR-DINO,RTMDet,3407,0.626,0.923,0.907,300,70,0.626,0.907,300
+rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py,RTM-RDF-LLR-DINO,RTMDet,42,0.623,0.92,0.918,289,140,0.616,0.915,300
+rtmdet_l_fire_4c_std.py,RTM-Base,RTMDet,0,0.552,0.857,0.856,298,300,0.552,0.857,300
+rtmdet_l_fire_4c_std.py,RTM-Base,RTMDet,1,0.586,0.874,0.874,300,299,0.586,0.874,300
+rtmdet_l_fire_4c_std.py,RTM-Base,RTMDet,1234,0.549,0.844,0.84,297,300,0.549,0.844,300
+rtmdet_l_fire_4c_std.py,RTM-Base,RTMDet,3407,0.564,0.856,0.855,299,298,0.564,0.856,300
+rtmdet_l_fire_4c_std.py,RTM-Base,RTMDet,42,0.563,0.873,0.873,300,300,0.563,0.873,300
+rtmdet_l_fire_4c_var_backbone_dinov3.py,RTM-DINO,RTMDet,0,0.577,0.867,0.865,110,150,0.554,0.857,300
+rtmdet_l_fire_4c_var_backbone_dinov3.py,RTM-DINO,RTMDet,1,0.583,0.871,0.87,120,180,0.559,0.847,300
+rtmdet_l_fire_4c_var_backbone_dinov3.py,RTM-DINO,RTMDet,1234,0.566,0.856,0.852,150,180,0.552,0.852,300
+rtmdet_l_fire_4c_var_backbone_dinov3.py,RTM-DINO,RTMDet,3407,0.573,0.86,0.86,150,150,0.559,0.847,300
+rtmdet_l_fire_4c_var_backbone_dinov3.py,RTM-DINO,RTMDet,42,0.572,0.861,0.861,298,298,0.572,0.861,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py,RTM-DINO-Opt,RTMDet,0,0.632,0.916,0.915,297,296,0.631,0.916,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py,RTM-DINO-Opt,RTMDet,1,0.626,0.918,0.916,298,90,0.626,0.918,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py,RTM-DINO-Opt,RTMDet,1234,0.632,0.925,0.925,299,299,0.628,0.925,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py,RTM-DINO-Opt,RTMDet,3407,0.625,0.918,0.917,295,297,0.624,0.918,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py,RTM-DINO-Opt,RTMDet,42,0.641,0.93,0.929,300,30,0.641,0.929,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py,RTM-DINO-Opt-WD0,RTMDet,0,0.576,0.868,0.868,110,110,0.566,0.854,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py,RTM-DINO-Opt-WD0,RTMDet,1,0.575,0.863,0.859,240,100,0.57,0.861,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py,RTM-DINO-Opt-WD0,RTMDet,1234,0.57,0.858,0.858,160,160,0.548,0.842,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py,RTM-DINO-Opt-WD0,RTMDet,3407,0.575,0.865,0.848,100,200,0.563,0.86,300
+rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py,RTM-DINO-Opt-WD0,RTMDet,42,0.569,0.86,0.86,170,170,0.563,0.86,300
+rtmdet_l_fire_4c_var_loss_focal.py,RTM-Focal,RTMDet,0,0.557,0.853,0.852,297,298,0.555,0.851,300
+rtmdet_l_fire_4c_var_loss_focal.py,RTM-Focal,RTMDet,1,0.554,0.842,0.842,300,300,0.554,0.842,300
+rtmdet_l_fire_4c_var_loss_focal.py,RTM-Focal,RTMDet,1234,0.546,0.839,0.838,299,300,0.546,0.839,300
+rtmdet_l_fire_4c_var_loss_focal.py,RTM-Focal,RTMDet,3407,0.55,0.853,0.853,300,300,0.55,0.853,300
+rtmdet_l_fire_4c_var_loss_focal.py,RTM-Focal,RTMDet,42,0.546,0.848,0.847,298,299,0.545,0.848,300
+rtmdet_l_fire_4c_var_neck_fpn.py,RTM-FPN,RTMDet,0,0.575,0.886,0.886,300,300,0.575,0.886,300
+rtmdet_l_fire_4c_var_neck_fpn.py,RTM-FPN,RTMDet,1,0.574,0.889,0.888,299,300,0.574,0.889,300
+rtmdet_l_fire_4c_var_neck_fpn.py,RTM-FPN,RTMDet,1234,0.581,0.886,0.882,298,299,0.58,0.886,300
+rtmdet_l_fire_4c_var_neck_fpn.py,RTM-FPN,RTMDet,3407,0.583,0.892,0.891,299,300,0.582,0.892,300
+rtmdet_l_fire_4c_var_neck_fpn.py,RTM-FPN,RTMDet,42,0.579,0.896,0.891,297,300,0.578,0.896,300
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py,YOLOX-RDF-LLR-DINO,YOLOX,0,0.626,0.921,0.91,300,60,0.626,0.91,300
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py,YOLOX-RDF-LLR-DINO,YOLOX,1,0.624,0.936,0.914,170,50,0.618,0.901,300
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py,YOLOX-RDF-LLR-DINO,YOLOX,1234,0.617,0.932,0.932,50,50,0.615,0.898,300
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py,YOLOX-RDF-LLR-DINO,YOLOX,3407,0.631,0.926,0.923,120,70,0.616,0.896,300
+yolox_l_fire_4c_innov_gated_dualneck_dinov3.py,YOLOX-RDF-LLR-DINO,YOLOX,42,0.622,0.942,0.912,130,30,0.621,0.89,300
+yolox_l_fire_4c_std.py,YOLOX-Base,YOLOX,0,0.469,0.799,0.799,300,300,0.469,0.799,300
+yolox_l_fire_4c_std.py,YOLOX-Base,YOLOX,1,0.448,0.783,0.783,300,300,0.448,0.783,300
+yolox_l_fire_4c_std.py,YOLOX-Base,YOLOX,1234,0.469,0.814,0.814,300,300,0.469,0.814,300
+yolox_l_fire_4c_std.py,YOLOX-Base,YOLOX,3407,0.479,0.808,0.808,300,300,0.479,0.808,300
+yolox_l_fire_4c_std.py,YOLOX-Base,YOLOX,42,0.473,0.819,0.819,300,300,0.473,0.819,300
+yolox_l_fire_4c_var_backbone_dinov3.py,YOLOX-DINO,YOLOX,0,0.625,0.929,0.892,300,60,0.625,0.892,300
+yolox_l_fire_4c_var_backbone_dinov3.py,YOLOX-DINO,YOLOX,1,0.607,0.924,0.897,300,80,0.607,0.897,300
+yolox_l_fire_4c_var_backbone_dinov3.py,YOLOX-DINO,YOLOX,1234,0.625,0.93,0.898,300,70,0.625,0.898,300
+yolox_l_fire_4c_var_backbone_dinov3.py,YOLOX-DINO,YOLOX,3407,0.621,0.942,0.935,140,110,0.611,0.897,300
+yolox_l_fire_4c_var_backbone_dinov3.py,YOLOX-DINO,YOLOX,42,0.631,0.929,0.905,300,80,0.631,0.905,300
+yolox_l_fire_4c_var_loss_giou.py,YOLOX-GIoU,YOLOX,0,0.454,0.815,0.815,300,300,0.454,0.815,300
+yolox_l_fire_4c_var_loss_giou.py,YOLOX-GIoU,YOLOX,1,0.462,0.807,0.807,300,300,0.462,0.807,300
+yolox_l_fire_4c_var_loss_giou.py,YOLOX-GIoU,YOLOX,1234,0.464,0.816,0.816,300,300,0.464,0.816,300
+yolox_l_fire_4c_var_loss_giou.py,YOLOX-GIoU,YOLOX,3407,0.436,0.777,0.777,300,300,0.436,0.777,300
+yolox_l_fire_4c_var_loss_giou.py,YOLOX-GIoU,YOLOX,42,0.489,0.828,0.828,300,300,0.489,0.828,300
+yolox_l_fire_4c_var_neck_cspnextpafpn.py,YOLOX-CSPPAFPN,YOLOX,0,0.506,0.815,0.815,300,300,0.506,0.815,300
+yolox_l_fire_4c_var_neck_cspnextpafpn.py,YOLOX-CSPPAFPN,YOLOX,1,0.525,0.833,0.833,300,300,0.525,0.833,300
+yolox_l_fire_4c_var_neck_cspnextpafpn.py,YOLOX-CSPPAFPN,YOLOX,1234,0.511,0.824,0.824,300,300,0.511,0.824,300
+yolox_l_fire_4c_var_neck_cspnextpafpn.py,YOLOX-CSPPAFPN,YOLOX,3407,0.511,0.819,0.819,300,300,0.511,0.819,300
+yolox_l_fire_4c_var_neck_cspnextpafpn.py,YOLOX-CSPPAFPN,YOLOX,42,0.496,0.807,0.807,300,300,0.496,0.807,300
