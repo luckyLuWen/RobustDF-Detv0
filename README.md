@@ -1,20 +1,8 @@
-# RDF-Det
+# RobustDF-Detv0
 
-**Robust Dual-Path Fusion for CNN-Based Vehicle Fire Detection in Ground-Based RGB Imagery**
+Research code for vehicle fire detection, with configuration files and utilities for installation, training, and evaluation.
 
-Wenyi Lu, Xiang Zhang, Boyu Zhang, Zhiqing Li, Zeqiang Chen, and Nengcheng Chen<br>
-China University of Geosciences, Wuhan
-
-[Installation](#installation) | [Data and weights](#data-and-weights) | [Training](#training) | [Evaluation](#evaluation) | [Results](#results) | [Result reproduction](#result-reproduction)
-
-RDF-Det detects vehicles and their visible fire states in road-scene RGB images. Its RDF-Neck combines a top-down Semantic Cascade Path, a bidirectional Spatial Reinforcement Path, a fusion operator, and a post-fusion alignment block. The main model uses a DINOv3 **ConvNeXt-B** backbone and the RTMDet detection head.
-
-```text
-RGB image -> CNN backbone -> parallel FPN / CSPNeXtPAFPN paths
-          -> learned or fixed fusion -> post-fusion alignment -> detection head
-```
-
-This release includes the 20 experimental configurations, the custom model modules, training/evaluation tools, and compact metrics from the 100 reported runs. The main configuration, **RTM-RDF-GLR-DINO**, obtains **0.6352 AP** and **0.9290 AP50**, an improvement of **7.24 AP points** over RTM-Base. Its recorded batch-one throughput is **42.8 FPS** on an RTX 4090 D.
+[Installation](#installation) | [Data and weights](#data-and-weights) | [Training](#training) | [Evaluation](#evaluation)
 
 ## Installation
 
@@ -54,18 +42,9 @@ python tools/setup_mmdet.py
 
 ## Data and weights
 
-### Downloads
+The image dataset, annotations, and trained model weights (`.pth` files) are available on request from the corresponding author.
 
-Google Drive links are reserved below and will be filled after the files are uploaded.
-
-| Asset | Used for | Google Drive |
-|---|---|---|
-| TFR images and COCO annotations | Training and evaluation | |
-| DINOv3 ConvNeXt-B pretrained weights | DINO-based configurations | |
-| ResNet-50 pretrained weights | Faster R-CNN baseline and neck control | |
-| Trained RDF-Det checkpoints | Evaluation and inference benchmarking | |
-
-Place the downloaded files as follows:
+Place the required data and pretrained backbone weights as follows:
 
 ```text
 RobustDF-Detv0/
@@ -90,13 +69,7 @@ The dataset uses COCO bounding-box annotations and this class order:
 | 2 | `lkyw_fire` | Coach or oil tanker with visible fire |
 | 3 | `lkyw_nofire` | Coach or oil tanker without visible fire |
 
-Here, ordinary vehicles exclude coaches and oil tankers. Smoke without visible fire is labeled `NoFire`. TFR was specifically curated to include scarce fire imagery involving coaches and oil tankers.
-
-| Split | Images | Annotated objects |
-|---|---:|---:|
-| Train | 968 | 988 |
-| Validation | 277 | 283 |
-| Test | 141 | 142 |
+Here, ordinary vehicles exclude coaches and oil tankers. Smoke without visible fire is labeled `NoFire`.
 
 After placing the data and weights, check the environment and configuration:
 
@@ -140,7 +113,7 @@ python tools/train.py rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dino
 | YOLOX | 640 × 640 | 300 | 8; DINO variants use 4 with two-step accumulation |
 | Faster R-CNN | 896 × 896 | 70 | 2 |
 
-The pretrained DINOv3 ConvNeXt-B backbone is jointly fine-tuned with the neck and head. The SCP mixing coefficient starts at 0.85 for LLR and 0.5 for GLR; FUF and PMFR retain 0.5. The released configurations preserve the original optimizer, augmentation, scheduler, and checkpoint settings.
+The configurations define the optimizer, augmentation, scheduler, and checkpoint settings.
 
 ### All five-seed experiments
 
@@ -178,53 +151,15 @@ python tools/test.py /path/to/trained_checkpoint.pth \
   --config yolox_l_fire_4c_innov_gated_dualneck_dinov3.py
 ```
 
-The archived throughput command used PyTorch eager execution, batch size 1, `--max-iter 100`, and `--num-warmup 20` on the RTX 4090 D. MMDetection counts warm-up iterations within `max-iter`, leaving 80 CUDA-synchronized timed iterations. The main model has approximately 118M parameters and 182G FLOPs at 640 × 640.
+Measure inference throughput with the supplied benchmark utility:
 
 ```bash
 python tools/benchmark.py /path/to/trained_checkpoint.pth
 ```
 
-## Results
+## Summarizing training logs
 
-The table reports mean **best validation AP** and **best validation AP50** over five seeds, selected independently within each run. AP is averaged over IoU thresholds 0.50:0.05:0.95. Scores remain on the 0–1 scale; differences are expressed in AP points relative to the baseline of the same detector family.
-
-<!-- RESULTS_TABLE_START -->
-| Model | AP | AP50 | Delta AP (points) |
-|---|---:|---:|---:|
-| **[RTM-RDF-GLR-DINO](HAZ-ViT/configs/rtmdet_l_fire_4c_innov_dualpath_globalgate_dinov3.py)** | 0.6352 | 0.9290 | +7.24 |
-| [RTM-RDF-FUF-DINO](HAZ-ViT/configs/rtmdet_l_fire_4c_innov_dualpath_nogate_dinov3.py) | 0.6348 | 0.9288 | +7.20 |
-| [RTM-RDF-PMFR-DINO](HAZ-ViT/configs/rtmdet_l_fire_4c_innov_dualpath_frozengate_parammatch_dinov3.py) | 0.6314 | 0.9312 | +6.86 |
-| [RTM-DINO-Opt](HAZ-ViT/configs/rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_lr01.py) | 0.6312 | 0.9214 | +6.84 |
-| [RTM-RDF-LLR-DINO](HAZ-ViT/configs/rtmdet_l_fire_4c_innov_gated_dualneck_dinov3.py) | 0.6294 | 0.9214 | +6.66 |
-| [RTM-RDF-LLR-CSP](HAZ-ViT/configs/rtmdet_l_fire_4c_innov_gated_dualneck_cspnext.py) | 0.5840 | 0.8912 | +2.12 |
-| [RTM-FPN](HAZ-ViT/configs/rtmdet_l_fire_4c_var_neck_fpn.py) | 0.5784 | 0.8898 | +1.56 |
-| [RTM-DINO](HAZ-ViT/configs/rtmdet_l_fire_4c_var_backbone_dinov3.py) | 0.5742 | 0.8630 | +1.14 |
-| [RTM-DINO-Opt-WD0](HAZ-ViT/configs/rtmdet_l_fire_4c_var_backbone_dinov3_opt_backbone_wd0.py) | 0.5730 | 0.8628 | +1.02 |
-| [RTM-Base](HAZ-ViT/configs/rtmdet_l_fire_4c_std.py) | 0.5628 | 0.8608 | +0.00 |
-| [RTM-Focal](HAZ-ViT/configs/rtmdet_l_fire_4c_var_loss_focal.py) | 0.5506 | 0.8470 | -1.22 |
-| [YOLOX-RDF-LLR-DINO](HAZ-ViT/configs/yolox_l_fire_4c_innov_gated_dualneck_dinov3.py) | 0.6240 | 0.9314 | +15.64 |
-| [YOLOX-DINO](HAZ-ViT/configs/yolox_l_fire_4c_var_backbone_dinov3.py) | 0.6218 | 0.9308 | +15.42 |
-| [YOLOX-CSPPAFPN](HAZ-ViT/configs/yolox_l_fire_4c_var_neck_cspnextpafpn.py) | 0.5098 | 0.8196 | +4.22 |
-| [YOLOX-Base](HAZ-ViT/configs/yolox_l_fire_4c_std.py) | 0.4676 | 0.8046 | +0.00 |
-| [YOLOX-GIoU](HAZ-ViT/configs/yolox_l_fire_4c_var_loss_giou.py) | 0.4610 | 0.8086 | -0.66 |
-| [FRCNN-DINO](HAZ-ViT/configs/faster_rcnn_fire_4c_plus_dino.py) | 0.5864 | 0.9072 | +20.00 |
-| [FRCNN-DINO-Neck](HAZ-ViT/configs/faster_rcnn_fire_4c_plus_both.py) | 0.5772 | 0.9098 | +19.08 |
-| [FRCNN-Base](HAZ-ViT/configs/faster_rcnn_fire_4c_baseline.py) | 0.3864 | 0.7368 | +0.00 |
-| [FRCNN-Neck](HAZ-ViT/configs/faster_rcnn_fire_4c_plus_neck.py) | 0.2792 | 0.6092 | -10.72 |
-<!-- RESULTS_TABLE_END -->
-
-Full-precision means, standard deviations, confidence intervals, final scores, and best–final gaps are provided in [`results/main_results.csv`](results/main_results.csv). Paired baseline comparisons and family-wise Holm corrections are in [`results/baseline_comparisons.csv`](results/baseline_comparisons.csv).
-
-## Result reproduction
-
-The compact [`seed_metrics.csv`](results/seed_metrics.csv) contains the 100 archived run records used for the table. Recomputing these numerical summaries does not require a GPU, images, or model weights:
-
-```bash
-python -m pip install numpy==1.26.4 scipy==1.17.0
-python tools/summarize.py
-```
-
-Outputs are written to `outputs/results/`. After running new training experiments, extract their validation records and summarize them with the same selection rule:
+Extract validation records from training logs and compute numerical summaries:
 
 ```bash
 python tools/collect_metrics.py work_dirs --output outputs/new_seed_metrics.csv
@@ -245,18 +180,6 @@ results/                 Compact per-seed metrics and reproduced tables
 ```
 
 The `projects/ViTDet` import path is retained for compatibility with the archived configurations. The released DINO configurations use the CNN-based ConvNeXt-B backbone. Dataset images, model weights, historical Git objects, full training logs, and generated paper assets are excluded from this code release.
-
-## Citation
-
-```bibtex
-@misc{lu2026rdfdet,
-  title  = {RDF-Det: Robust Dual-Path Fusion for CNN-Based Vehicle Fire Detection in Ground-Based RGB Imagery},
-  author = {Lu, Wenyi and Zhang, Xiang and Zhang, Boyu and Li, Zhiqing and Chen, Zeqiang and Chen, Nengcheng},
-  year   = {2026},
-  note   = {Manuscript and research code},
-  url    = {https://github.com/luckyLuWen/RobustDF-Detv0}
-}
-```
 
 ## Acknowledgments and licenses
 
